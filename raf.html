@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RAF Queue</title>
+</head>
+<body>
+	<button id="btn">Start SetTimeout Counter</button>
+	<button id="btn1">Start RAF Counter</button>
+	<button id="btn2">Start both Counters</button>
+	<div >setTiemout counter: <span id="st">0</span></div>
+	<div >RAF counter: <span id="raf">0</span></div>
+	<script type="text/javascript">
+		function stCounter(i){
+			st.innerText = i;
+			setTimeout(()=>stCounter(i+1),0)
+		}
+		function rafCounter(i){
+			raf.innerText = i;
+			requestAnimationFrame(()=>rafCounter(i+1))		
+		}
+
+		btn.addEventListener('click',()=>stCounter(0),false)
+		btn1.addEventListener('click',()=>rafCounter(0),false)
+		btn2.addEventListener('click',()=>{rafCounter(0);stCounter(0)},false)
+
+
+	</script>
+</body>
+</html>
