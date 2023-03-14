@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task Queue</title>
+</head>
+<body>
+		<button>Kill the Thread</button><br>
+		<button style="margin-top: 1rem">Click Me</button>
+		<input type="text" placeholder="nothing works after kill the thread button"/>
+		<script type="text/javascript">
+			const btn = document.querySelector('button')
+			btn.addEventListener('click',killTheThread,false)
+
+			function killTheThread(){
+					console.log('In the Thread')
+					while(true);
+			}
+			// Output 1 - Freezes the browser tab
+
+
+			function killTheThread(){
+					console.log('In the Thread')
+					killTheThread();
+			}
+
+			// Output 2 - Exceutes till the call stack size 'In the thread' around 12,000 times
+			// and then we receive error message of call stack size exceeded
+
+			function killTheThread(){
+					console.log('In the Thread')
+					setTimeout(killTheThread,0)
+			}
+
+
+
+
+		</script>
+</body>
+</html>
