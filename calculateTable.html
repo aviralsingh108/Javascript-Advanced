@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="text-align: center;">
+	<h1>Enter the no. whose table you want to calculate </h1>
+	<input type="text" id="enteredNo" placeholder="Enter the No." />
+	<button type="submit" onclick="table()">
+		Generate Table
+	</button>
+	<h3 id="tableSpace">
+		
+	</h3>
+	<script type="text/javascript">
+		function table(){
+			var space = document.getElementById('tableSpace');
+			var num = Number(document.getElementById('enteredNo').value); 
+			space.innerHTML=""; 
+			for (var i=1; i<=10; i++){
+				space.innerHTML+= num+"x"+i+"= "+(num*i)+"<br>";
+			}
+		}
+	</script>
+</body>
+</html>

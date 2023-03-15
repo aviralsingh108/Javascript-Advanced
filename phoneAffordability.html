@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let finalAmount = 0;
+		let exit = false;
+		const BANK_BALANCE = parseInt(prompt('Enter Bank Balance'))
+		const THRESHOLD = parseInt(prompt('Enter Accessories Threshold Balance'))
+
+		function calculateAmount(){
+			let totalAmount = 0;
+			let phonePrice = parseInt(prompt('Enter Phone Price'))
+			let accessoriesPrice = parseInt(prompt('Enter Accessories Price'))
+				if (phonePrice>=BANK_BALANCE || phonePrice===null || phonePrice===undefined){
+					console.log(`Phone amount ${phonePrice} exceeds the Bank Amount ${BANK_BALANCE} or is invalid`)
+	  				return;			
+				}
+				else{
+					totalAmount += phonePrice
+				}
+			  	if (accessoriesPrice>=THRESHOLD || accessoriesPrice===null || accessoriesPrice===undefined){
+					console.log(`Accessories amount ${accessoriesPrice} exceeds the Threshold ${THRESHOLD}`)
+					return;				 		
+				}
+				else{
+					totalAmount += accessoriesPrice
+				}
+	  		totalAmount = (totalAmount*110)/100
+			finalAmount += totalAmount
+	  		if (totalAmount>=BANK_BALANCE || finalAmount>=BANK_BALANCE){
+				exit = true;	
+			}
+			else{
+				console.log(`You can afford the Phone for ${totalAmount}`)		
+			}	
+		}
+
+		while (finalAmount<BANK_BALANCE){
+			calculateAmount()
+			if (exit === true){
+				console.log(`You can't afford the Phone`)		
+				break;
+			}
+		}
+		
+	</script>
+</body>
+</html>

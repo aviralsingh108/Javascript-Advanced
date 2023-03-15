@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="icon" type="image/jpg" href="shark.jpeg"/>
+		<!--
+		https://html.sammy-codes.com/images/small-profile.jpeg
+		 -->
+	<style type="text/css">
+		.btn{
+			font-size: 30px
+			margin-right: 10px;
+			max-width: 30px;
+			min-width: 30px;
+			color: purple;
+			background-color: yellow;
+			border-radius: 5px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body style="text-align: center;">
+	<h1>Enter your values </h1>
+	First No = <input type="text" id="firstNo" placeholder="Enter the No." />
+	Second No = <input type="text" id="secondNo" placeholder="Enter the No." /><br><br>
+	<div id="btn">
+		<button class="btn" type="submit" onclick="addition()">+</button>
+		<button class="btn" type="submit" onclick="multiplication()">x</button>
+		<button class="btn" type="submit" onclick="subtraction()">-</button>
+		<button class="btn" type="submit" onclick="division()">/</button>
+	</div>
+	
+
+	<h3 id="tableSpace">
+		
+	</h3>
+
+	<script type="text/javascript">
+		function addition(){
+			var space = document.getElementById('tableSpace');
+			var num = Number(document.getElementById('firstNo').value); 
+			var num1 = Number(document.getElementById('secondNo').value); 
+			space.innerHTML=""; 
+			space.innerHTML= num+num1;
+		}
+		function multiplication(){
+			var space = document.getElementById('tableSpace');
+			var num = Number(document.getElementById('firstNo').value); 
+			var num1 = Number(document.getElementById('secondNo').value); 
+			space.innerHTML=""; 
+			space.innerHTML= num*num1;
+		}
+		function subtraction(){
+			var space = document.getElementById('tableSpace');
+			var num = Number(document.getElementById('firstNo').value); 
+			var num1 = Number(document.getElementById('secondNo').value); 
+			space.innerHTML=""; 
+			space.innerHTML= num-num1;
+		}
+		function division(){
+			var space = document.getElementById('tableSpace');
+			var num = Number(document.getElementById('firstNo').value); 
+			var num1 = Number(document.getElementById('secondNo').value); 
+			space.innerHTML=""; 
+			space.innerHTML= num/num1;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changing Color</title>
+	<link rel="icon" type="image/jpg" href="shark.jpeg">
+	<style type="text/css">
+		button{
+			margin: auto;
+			background-color: cyan;
+			font-size: 30px;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="color: purple;">We have our own icon for our Webpage or Website</h1>
+	<h2 style="color: brown;">
+		This simple button will change the color to specified color when the button is clicked for the first time and when it's clicked for the next time, it will change it to default white color.
+	</h2>
+	<button onclick="changeColor()">
+			Click Me
+	</button>
+	<script type="text/javascript">
+		 var count = 0;
+		 function changeColor(){
+		 	if(count%2==0){
+		 		document.body.style.backgroundColor='yellow';
+		 	}
+		 	else{
+		 		document.body.style.backgroundColor='white';
+		 	}
+		 	count++;
+		 }		
+	</script>
+</body>
+</html>

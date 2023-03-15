@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator Using Switch Case</title>
+	
+</head>
+<body style="text-align: center">
+	<input type="text" id="no1" value="">
+	<select id="operation">
+	    <option value="0">Addition</option>
+	    <option value="1">Subtraction</option>
+	    <option value="2">Multiplication</option>
+	    <option value="3">Divide</option>
+	</select>
+	<input type="text" id="no2" value="">
+	<input type="button" onClick="calc();" value="Solve"><br/><br/>
+	<p id="result">The answer is : </p>
+	<script>
+
+            function plus(a,b) {
+                return (a + b);
+            }
+
+            function minus(a,b) {
+                return (a - b);
+            }
+
+            function multiply(a,b) {
+                return (a * b);
+            }
+
+            function divide(a,b) {
+                return (a / b);
+            }
+
+            function calc() {
+                var w;
+                var x = Number(document.getElementById("no1").value);
+                var y = document.getElementById("operation").value;
+                var z = Number(document.getElementById("no2").value);
+            
+                switch (y) {
+                    case '0':
+                        w = plus(x, z);
+                document.getElementById("result").innerHTML="The Answer is :"+w;
+                        break;
+                    case '1':
+                        w = minus(x, z);
+                document.getElementById("result").innerHTML="The Answer is :"+w;
+                        break;
+                    case '2':
+                        w = multiply(x, z);
+                document.getElementById("result").innerHTML="The Answer is :"+w;
+                        break;
+                    case '3':
+                        w = divide(x, z);
+                document.getElementById("result").innerHTML="The Answer is :"+w;
+                        break;
+                    default:
+                        w = "Don't really know..";
+                }
+
+            }
+</script>
+	
+
+
+
+
+</body>
+</html>
