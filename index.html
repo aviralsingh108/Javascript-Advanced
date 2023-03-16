@@ -6,11 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .item {
+            /* display: block; */
+        }
+
+        .close {
+            color: red;
+            background-color: whitesmoke;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+
+        .disp {
+            /* display: flex; */
+        }
+
+        .item-and-btn {
+            /* display: flex; */
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <script src="main.js"></script> -->
-    <script src="main.js"></script>
+    <input type="text" id="ip" name="item" placeholder="enter item" />
+    <button onclick="addItem()">Submit</button>
+    <div id="disp">
+
+    </div>
+    <script src="./Javascript/toDo.js"></script>
 </body>
 
 </html>
