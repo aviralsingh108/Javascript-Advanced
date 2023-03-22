@@ -3,9 +3,8 @@ function addItem() {
   const input = document.getElementById("ip").value;
   //container
   let container = document.getElementById("disp");
-  //creating item and btn
-  const itemAndBtn = document.createElement("div");
-  itemAndBtn.className = "item-and-btn";
+  //creating subContainer
+  const subContainer = document.createElement("sub-container");
   // creating item
   const item = document.createElement("span");
   item.className = "item";
@@ -16,26 +15,10 @@ function addItem() {
   closeBtn.className = "close";
   closeBtn.innerHTML = "x";
   //inserting inside item and btn container
-  itemAndBtn.appendChild(item);
-  itemAndBtn.appendChild(closeBtn);
-  container.appendChild(itemAndBtn);
-  for (i = 0; i < itemAndBtn.length; i++) {
-    itemAndBtn[i].onclick = () => {
-      let div = this.parentElement;
-      // div.remove();
-      div.style.display = "none";
-    };
-  }
-  // itemClose.style.display = "block";
-  //   });
-}
-
-const itemAndBtn = document.getElementsByClassName("close");
-let i;
-for (i = 0; i < itemAndBtn.length; i++) {
-  itemAndBtn[i].onclick = () => {
-    let div = this.parentElement;
-    // div.remove();
-    div.style.display = "none";
-  };
+  subContainer.appendChild(item);
+  subContainer.appendChild(closeBtn);
+  container.appendChild(subContainer);
+  closeBtn.addEventListener("click", () => {
+    container.removeChild(subContainer);
+  });
 }
