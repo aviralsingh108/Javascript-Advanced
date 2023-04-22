@@ -58,3 +58,24 @@ function splitMonthYear(keyFormat) {
 }
 
 console.log(splitMonthYear(keyFormat));
+
+//Problem 2
+// Write a function that takes an array of strings and returns a new array with the longest word from each string.
+// Sample input:
+const strings = ["The quick brown fox", "jumps over", "the lazy dog"];
+
+//Sample Output:
+// ["cherry", "elephant", "JavaScript"];
+
+function logngestString(strings) {
+  return strings.reduce((acc, curr) => {
+    const subString = curr.split(" ");
+    let longest = subString[0];
+    subString.forEach((item) => {
+      if (item.length > longest.length) longest = item;
+    });
+    acc.push(longest);
+    return acc;
+  }, []);
+}
+console.log(logngestString(strings));
