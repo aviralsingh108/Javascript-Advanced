@@ -79,3 +79,62 @@ function logngestString(strings) {
   }, []);
 }
 console.log(logngestString(strings));
+
+//Problem 3
+//Implement a function that takes an array of objects representing customers and returns the total revenue grouped by country. Each customer object has properties "name" (a string), "country" (a string), and "orders" (an array of objects representing orders, where each order object has properties "id" (a number) and "price" (a number)).
+//Sample input:
+const customers = [
+  {
+    name: "Alice",
+    country: "USA",
+    orders: [
+      { id: 1, price: 700 },
+      { id: 2, price: 50 },
+    ],
+  },
+  {
+    name: "Bob",
+    country: "Canada",
+    orders: [
+      { id: 3, price: 200 },
+      { id: 4, price: 75 },
+    ],
+  },
+  { name: "Charlie", country: "USA", orders: [{ id: 5, price: 300 }] },
+  {
+    name: "Dave",
+    country: "Canada",
+    orders: [
+      { id: 6, price: 150 },
+      { id: 7, price: 25 },
+    ],
+  },
+  {
+    name: "Eve",
+    country: "UK",
+    orders: [
+      { id: 8, price: 250 },
+      { id: 9, price: 125 },
+    ],
+  },
+];
+//Sample Output
+// {
+//   "USA": 700,
+//   "Canada": 450,
+//   "UK": 375
+// }
+
+function totalRevenue(customers) {
+  return customers.reduce((acc, curr) => {
+    let sum = 0;
+    curr.orders.forEach((item) => {
+      sum += item.price;
+    });
+    if (!acc[curr.country]) acc[curr.country] = 0;
+    acc[curr.country] += sum;
+    return acc;
+  }, {});
+}
+
+console.log(totalRevenue(customers));
