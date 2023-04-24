@@ -138,3 +138,37 @@ function totalRevenue(customers) {
 }
 
 console.log(totalRevenue(customers));
+
+//Problem 4
+// Write a function that takes an array of strings and returns a new array with only the words that appear more than once in the original array.
+// Sample input:
+const strings2 = [
+  "apple",
+  "banana",
+  "cherry",
+  "apple",
+  "banana",
+  "pear",
+  "peach",
+  "nimbu",
+  "nimbu",
+];
+// Sample Output:
+// ["apple", "banana"];
+
+function moreThanOnce(strings2) {
+  const obj = {};
+  const arr = [];
+  strings2.forEach((item) => {
+    if (obj[item]) {
+      obj[item] += 1;
+    } else obj[item] = 1;
+  });
+  for (const key in obj) {
+    if (obj[key] > 1) arr.push(key);
+  }
+
+  return arr;
+}
+
+console.log(moreThanOnce(strings2));
