@@ -16,4 +16,4 @@ function plus(param) {
   };
 }
 
-console.log(plus(2).plus(9).value());
+console.log(plus(2).plus(9).minus(8).value());

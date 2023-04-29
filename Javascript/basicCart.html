@@ -1,0 +1,72 @@
+<!-- Making a Cart for some items, which will change the css on click event and increase or decrease the value of the
+counter. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .heading {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* flex-flow: column wrap; */
+        }
+
+        .selected {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Shopping Cart</h1>
+        <h2 id="count">Count:</h2>
+    </div>
+    <div>
+        <ul>
+            <li class="item">Mango</li>
+            <li class="item">Orange</li>
+            <li class="item">Papaya</li>
+            <li class="item">Guava</li>
+            <li class="item">Lemon</li>
+        </ul>
+    </div>
+    <script>
+        let cartCounter = (function () {
+            let count = 0;
+            return {
+                increment: () => count += 1,
+                decrement: () => count -= 1,
+                value: () => count
+            }
+        })()
+        function updateCart() {
+            document.getElementById('count').innerHTML = 'Count: ' + cartCounter.value()
+        }
+        const list = document.getElementsByClassName('item')
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function () {
+                if (this.className.indexOf('selected') < 0) {
+                    this.className += ' selected'
+                    cartCounter.increment()
+                    updateCart()
+                }
+                else {
+                    this.className = this.className.replace('selected', '')
+                    cartCounter.decrement()
+                    updateCart()
+
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>
